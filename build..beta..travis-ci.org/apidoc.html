@@ -1,0 +1,632 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api-documentation for
+    <a
+
+        href="https://github.com/substack/node-optimist"
+
+    >optimist (v0.6.1)</a>
+</h1>
+<h4>Light-weight option parsing with an argv hash. No optstrings attached.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.optimist">module optimist</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.alias">
+            function <span class="apidocSignatureSpan">optimist.</span>alias
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.boolean">
+            function <span class="apidocSignatureSpan">optimist.</span>boolean
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.check">
+            function <span class="apidocSignatureSpan">optimist.</span>check
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.default">
+            function <span class="apidocSignatureSpan">optimist.</span>default
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.demand">
+            function <span class="apidocSignatureSpan">optimist.</span>demand
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.describe">
+            function <span class="apidocSignatureSpan">optimist.</span>describe
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.help">
+            function <span class="apidocSignatureSpan">optimist.</span>help
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.option">
+            function <span class="apidocSignatureSpan">optimist.</span>option
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.options">
+            function <span class="apidocSignatureSpan">optimist.</span>options
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.parse">
+            function <span class="apidocSignatureSpan">optimist.</span>parse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.rebase">
+            function <span class="apidocSignatureSpan">optimist.</span>rebase
+            <span class="apidocSignatureSpan">(base, dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.showHelp">
+            function <span class="apidocSignatureSpan">optimist.</span>showHelp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.string">
+            function <span class="apidocSignatureSpan">optimist.</span>string
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.usage">
+            function <span class="apidocSignatureSpan">optimist.</span>usage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.optimist.wrap">
+            function <span class="apidocSignatureSpan">optimist.</span>wrap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">optimist.</span>argv</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.optimist" id="apidoc.module.optimist">module optimist</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.alias" id="apidoc.element.optimist.alias">
+        function <span class="apidocSignatureSpan">optimist.</span>alias
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alias = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+    return self;
+};
+
+self.alias = function (x, y) {
+    if (typeof x === &#x27;object&#x27;) {
+        Object.keys(x).forEach(function (key) {
+            self.<span class="apidocCodeKeywordSpan">alias</span>(key, x[key]);
+        });
+    }
+    else {
+        options.alias[x] = (options.alias[x] || []).concat(y);
+    }
+    return self;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.boolean" id="apidoc.element.optimist.boolean">
+        function <span class="apidocSignatureSpan">optimist.</span>boolean
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">boolean = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (opt.alias) self.alias(key, opt.alias);
+if (opt.demand) self.demand(key);
+if (typeof opt.default !== &#x27;undefined&#x27;) {
+    self.default(key, opt.default);
+}
+
+if (opt.boolean || opt.type === &#x27;boolean&#x27;) {
+    self.<span class="apidocCodeKeywordSpan">boolean</span>(key);
+}
+if (opt.string || opt.type === &#x27;string&#x27;) {
+    self.string(key);
+}
+
+var desc = opt.describe || opt.description || opt.desc;
+if (desc) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.check" id="apidoc.element.optimist.check">
+        function <span class="apidocSignatureSpan">optimist.</span>check
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+.usage(message)
+---------------
+
+Set a usage message to show which commands to use. Inside `message`, the string
+`$0` will get interpolated to the current script name or node command for the
+present script similar to how `$0` works in bash or perl.
+
+.<span class="apidocCodeKeywordSpan">check</span>(fn)
+----------
+
+Check that certain conditions are met in the provided arguments.
+
+If `fn` throws or returns `false`, show the thrown error, usage information, and
+exit.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.default" id="apidoc.element.optimist.default">
+        function <span class="apidocSignatureSpan">optimist.</span>default
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">default = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    options.string.push.apply(options.string, [].concat(strings));
+    return self;
+};
+
+self.default = function (key, value) {
+    if (typeof key === &#x27;object&#x27;) {
+        Object.keys(key).forEach(function (k) {
+            self.<span class="apidocCodeKeywordSpan">default</span>(k, key[k]);
+        });
+    }
+    else {
+        options.default[key] = value;
+    }
+    return self;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.demand" id="apidoc.element.optimist.demand">
+        function <span class="apidocSignatureSpan">optimist.</span>demand
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">demand = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    self.demand = function (keys) {
+if (typeof keys == &#x27;number&#x27;) {
+    if (!demanded._) demanded._ = 0;
+    demanded._ += keys;
+}
+else if (Array.isArray(keys)) {
+    keys.forEach(function (key) {
+        self.<span class="apidocCodeKeywordSpan">demand</span>(key);
+    });
+}
+else {
+    demanded[keys] = true;
+}
+
+return self;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.describe" id="apidoc.element.optimist.describe">
+        function <span class="apidocSignatureSpan">optimist.</span>describe
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">describe = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return self;
+};
+
+var descriptions = {};
+self.describe = function (key, desc) {
+    if (typeof key === &#x27;object&#x27;) {
+        Object.keys(key).forEach(function (k) {
+            self.<span class="apidocCodeKeywordSpan">describe</span>(k, key[k]);
+        });
+    }
+    else {
+        descriptions[key] = desc;
+    }
+    return self;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.help" id="apidoc.element.optimist.help">
+        function <span class="apidocSignatureSpan">optimist.</span>help
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">help = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+self.wrap = function (cols) {
+    wrap = cols;
+    return self;
+};
+
+self.showHelp = function (fn) {
+    if (!fn) fn = console.error;
+    fn(self.<span class="apidocCodeKeywordSpan">help</span>());
+};
+
+self.help = function () {
+    var keys = Object.keys(
+        Object.keys(descriptions)
+        .concat(Object.keys(demanded))
+        .concat(Object.keys(options.default))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.option" id="apidoc.element.optimist.option">
+        function <span class="apidocSignatureSpan">optimist.</span>option
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">option = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.options" id="apidoc.element.optimist.options">
+        function <span class="apidocSignatureSpan">optimist.</span>options
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (!opts &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+        opts = msg;
+        msg = null;
+    }
+
+    usage = msg;
+
+    if (opts) self.<span class="apidocCodeKeywordSpan">options</span>(opts);
+
+    return self;
+};
+
+function fail (msg) {
+    self.showHelp();
+    if (msg) console.error(msg);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.parse" id="apidoc.element.optimist.parse">
+        function <span class="apidocSignatureSpan">optimist.</span>parse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can pass in the `process.argv` yourself:
+
+````javascript
+require(&#x27;optimist&#x27;)([ &#x27;-x&#x27;, &#x27;1&#x27;, &#x27;-y&#x27;, &#x27;2&#x27; ]).argv
+````
+
+or use .<span class="apidocCodeKeywordSpan">parse</span>() to do the same thing:
+
+````javascript
+require(&#x27;optimist&#x27;).parse([ &#x27;-x&#x27;, &#x27;1&#x27;, &#x27;-y&#x27;, &#x27;2&#x27; ])
+````
+
+The rest of these methods below come in just before the terminating `.argv`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.rebase" id="apidoc.element.optimist.rebase">
+        function <span class="apidocSignatureSpan">optimist.</span>rebase
+        <span class="apidocSignatureSpan">(base, dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rebase(base, dir) {
+    var ds = path.normalize(dir).split(&#x27;/&#x27;).slice(1);
+    var bs = path.normalize(base).split(&#x27;/&#x27;).slice(1);
+
+    for (var i = 0; ds[i] &#x26;&#x26; ds[i] == bs[i]; i++);
+    ds.splice(0, i); bs.splice(0, i);
+
+    var p = path.normalize(
+        bs.map(function () { return &#x27;..&#x27; }).concat(ds).join(&#x27;/&#x27;)
+    ).replace(/\/$/,&#x27;&#x27;).replace(/^$/, &#x27;.&#x27;);
+    return p.match(/^[.\/]/) ? p : &#x27;./&#x27; + p;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.showHelp" id="apidoc.element.optimist.showHelp">
+        function <span class="apidocSignatureSpan">optimist.</span>showHelp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">showHelp = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    if (opts) self.options(opts);
+
+    return self;
+};
+
+function fail (msg) {
+    self.<span class="apidocCodeKeywordSpan">showHelp</span>();
+    if (msg) console.error(msg);
+    process.exit(1);
+}
+
+var checks = [];
+self.check = function (f) {
+    checks.push(f);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.string" id="apidoc.element.optimist.string">
+        function <span class="apidocSignatureSpan">optimist.</span>string
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">string = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        self.default(key, opt.default);
+    }
+
+    if (opt.boolean || opt.type === &#x27;boolean&#x27;) {
+        self.boolean(key);
+    }
+    if (opt.string || opt.type === &#x27;string&#x27;) {
+        self.<span class="apidocCodeKeywordSpan">string</span>(key);
+    }
+
+    var desc = opt.describe || opt.description || opt.desc;
+    if (desc) {
+        self.describe(key, desc);
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.usage" id="apidoc.element.optimist.usage">
+        function <span class="apidocSignatureSpan">optimist.</span>usage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">usage = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    (6.82,3.35)
+    [ &#x27;moo&#x27; ]
+
+    $ ./nonopt.js foo -x 0.54 bar -y 1.12 baz
+    (0.54,1.12)
+    [ &#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27; ]
+
+Plus, Optimist comes with .<span class="apidocCodeKeywordSpan">usage</span>() and .demand()!
+-------------------------------------------------
+
+divide.js:
+
+````javascript
+#!/usr/bin/env node
+var argv = require(&#x27;optimist&#x27;)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.optimist.wrap" id="apidoc.element.optimist.wrap">
+        function <span class="apidocSignatureSpan">optimist.</span>wrap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrap = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+------------
+
+Tell the parser logic not to interpret `key` as a number or boolean.
+This can be useful if you need to preserve leading zeros in an input.
+
+If `key` is an Array, interpret all the elements as strings.
+
+.<span class="apidocCodeKeywordSpan">wrap</span>(columns)
+--------------
+
+Format usage output to wrap at `columns` many columns.
+
+.help()
+-------
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
