@@ -1,11 +1,13 @@
-# api documentation for  [optimist (v0.6.1)](https://github.com/substack/node-optimist)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-optimist.svg)](https://travis-ci.org/npmdoc/node-npmdoc-optimist)
+# api documentation for  [optimist (v0.6.1)](https://github.com/substack/node-optimist)  [![npm package](https://img.shields.io/npm/v/npmdoc-optimist.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-optimist) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-optimist.svg)](https://travis-ci.org/npmdoc/node-npmdoc-optimist)
 #### Light-weight option parsing with an argv hash. No optstrings attached.
 
 [![NPM](https://nodei.co/npm/optimist.png?downloads=true)](https://www.npmjs.com/package/optimist)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-optimist/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-optimist_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-optimist/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-optimist/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-optimist_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-optimist/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-optimist/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-optimist/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-optimist/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
