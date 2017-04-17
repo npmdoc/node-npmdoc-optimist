@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/substack/node-optimist"
-
-    >optimist (v0.6.1)</a>
+    <a href="https://github.com/substack/node-optimist">optimist (v0.6.1)</a>
 </h1>
 <h4>Light-weight option parsing with an argv hash. No optstrings attached.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.optimist">module optimist</a><ol>
 
@@ -451,15 +444,15 @@
         .slice(0,2)
         .map(function (x) {
             var b = rebase(cwd, x);
-            return x.match(/^\//) &#x26;&#x26; b.length &#x3c; x.length
+            return x.match(/^\//) &amp;&amp; b.length &lt; x.length
                 ? b : x
         })
-        .join(&#x27; &#x27;)
+        .join(' ')
     ;
 
-    if (process.env._ != undefined &#x26;&#x26; process.argv[1] == process.env._) {
+    if (process.env._ != undefined &amp;&amp; process.argv[1] == process.env._) {
         self.$0 = process.env._.replace(
-            path.dirname(process.execPath) + &#x27;/&#x27;, &#x27;&#x27;
+            path.dirname(process.execPath) + '/', ''
         );
     }
 
@@ -481,7 +474,7 @@
     };
 
     self.default = function (key, value) {
-        if (typeof key === &#x27;object&#x27;) {
+        if (typeof key === 'object') {
             Object.keys(key).forEach(function (k) {
                 self.default(k, key[k]);
             });
@@ -493,7 +486,7 @@
     };
 
     self.alias = function (x, y) {
-        if (typeof x === &#x27;object&#x27;) {
+        if (typeof x === 'object') {
             Object.keys(x).forEach(function (key) {
                 self.alias(key, x[key]);
             });
@@ -506,7 +499,7 @@
 
     var demanded = {};
     self.demand = function (keys) {
-        if (typeof keys == &#x27;number&#x27;) {
+        if (typeof keys == 'number') {
             if (!demanded._) demanded._ = 0;
             demanded._ += keys;
         }
@@ -524,7 +517,7 @@
 
     var usage;
     self.usage = function (msg, opts) {
-        if (!opts &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+        if (!opts &amp;&amp; typeof msg === 'object') {
             opts = msg;
             msg = null;
         }
@@ -550,7 +543,7 @@
 
     var descriptions = {};
     self.describe = function (key, desc) {
-        if (typeof key === &#x27;object&#x27;) {
+        if (typeof key === 'object') {
             Object.keys(key).forEach(function (k) {
                 self.describe(k, key[k]);
             });
@@ -566,7 +559,7 @@
     };
 
     self.option = self.options = function (key, opt) {
-        if (typeof key === &#x27;object&#x27;) {
+        if (typeof key === 'object') {
             Object.keys(key).forEach(function (k) {
                 self.options(k, key[k]);
             });
@@ -574,14 +567,14 @@
         else {
             if (opt.alias) self.alias(key, opt.alias);
             if (opt.demand) self.demand(key);
-            if (typeof opt.default !== &#x27;undefined&#x27;) {
+            if (typeof opt.default !== 'undefined') {
                 self.default(key, opt.default);
             }
 
-            if (opt.boolean || opt.type === &#x27;boolean&#x27;) {
+            if (opt.boolean || opt.type === 'boolean') {
                 self.boolean(key);
             }
-            if (opt.string || opt.type === &#x27;string&#x27;) {
+            if (opt.string || opt.type === 'string') {
                 self.string(key);
             }
 
@@ -628,7 +621,7 @@
 };
 
 self.alias = function (x, y) {
-    if (typeof x === &#x27;object&#x27;) {
+    if (typeof x === 'object') {
         Object.keys(x).forEach(function (key) {
             self.<span class="apidocCodeKeywordSpan">alias</span>(key, x[key]);
         });
@@ -654,14 +647,14 @@ self.alias = function (x, y) {
     <li>example usage<pre class="apidocCodePre">...
 if (opt.alias) self.alias(key, opt.alias);
 if (opt.demand) self.demand(key);
-if (typeof opt.default !== &#x27;undefined&#x27;) {
+if (typeof opt.default !== 'undefined') {
     self.default(key, opt.default);
 }
 
-if (opt.boolean || opt.type === &#x27;boolean&#x27;) {
+if (opt.boolean || opt.type === 'boolean') {
     self.<span class="apidocCodeKeywordSpan">boolean</span>(key);
 }
-if (opt.string || opt.type === &#x27;string&#x27;) {
+if (opt.string || opt.type === 'string') {
     self.string(key);
 }
 
@@ -714,7 +707,7 @@ exit.
 };
 
 self.default = function (key, value) {
-    if (typeof key === &#x27;object&#x27;) {
+    if (typeof key === 'object') {
         Object.keys(key).forEach(function (k) {
             self.<span class="apidocCodeKeywordSpan">default</span>(k, key[k]);
         });
@@ -739,7 +732,7 @@ self.default = function (key, value) {
     <li>description and source-code<pre class="apidocCodePre">demand = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     self.demand = function (keys) {
-if (typeof keys == &#x27;number&#x27;) {
+if (typeof keys == 'number') {
     if (!demanded._) demanded._ = 0;
     demanded._ += keys;
 }
@@ -772,7 +765,7 @@ return self;
 
 var descriptions = {};
 self.describe = function (key, desc) {
-    if (typeof key === &#x27;object&#x27;) {
+    if (typeof key === 'object') {
         Object.keys(key).forEach(function (k) {
             self.<span class="apidocCodeKeywordSpan">describe</span>(k, key[k]);
         });
@@ -838,7 +831,7 @@ self.help = function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">options = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    if (!opts &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+    if (!opts &amp;&amp; typeof msg === 'object') {
         opts = msg;
         msg = null;
     }
@@ -871,13 +864,13 @@ function fail (msg) {
 You can pass in the `process.argv` yourself:
 
 ````javascript
-require(&#x27;optimist&#x27;)([ &#x27;-x&#x27;, &#x27;1&#x27;, &#x27;-y&#x27;, &#x27;2&#x27; ]).argv
+require('optimist')([ '-x', '1', '-y', '2' ]).argv
 ````
 
 or use .<span class="apidocCodeKeywordSpan">parse</span>() to do the same thing:
 
 ````javascript
-require(&#x27;optimist&#x27;).parse([ &#x27;-x&#x27;, &#x27;1&#x27;, &#x27;-y&#x27;, &#x27;2&#x27; ])
+require('optimist').parse([ '-x', '1', '-y', '2' ])
 ````
 
 The rest of these methods below come in just before the terminating `.argv`.
@@ -894,16 +887,16 @@ The rest of these methods below come in just before the terminating `.argv`.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function rebase(base, dir) {
-    var ds = path.normalize(dir).split(&#x27;/&#x27;).slice(1);
-    var bs = path.normalize(base).split(&#x27;/&#x27;).slice(1);
+    var ds = path.normalize(dir).split('/').slice(1);
+    var bs = path.normalize(base).split('/').slice(1);
 
-    for (var i = 0; ds[i] &#x26;&#x26; ds[i] == bs[i]; i++);
+    for (var i = 0; ds[i] &amp;&amp; ds[i] == bs[i]; i++);
     ds.splice(0, i); bs.splice(0, i);
 
     var p = path.normalize(
-        bs.map(function () { return &#x27;..&#x27; }).concat(ds).join(&#x27;/&#x27;)
-    ).replace(/\/$/,&#x27;&#x27;).replace(/^$/, &#x27;.&#x27;);
-    return p.match(/^[.\/]/) ? p : &#x27;./&#x27; + p;
+        bs.map(function () { return '..' }).concat(ds).join('/')
+    ).replace(/\/$/,'').replace(/^$/, '.');
+    return p.match(/^[.\/]/) ? p : './' + p;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -951,10 +944,10 @@ self.check = function (f) {
         self.default(key, opt.default);
     }
 
-    if (opt.boolean || opt.type === &#x27;boolean&#x27;) {
+    if (opt.boolean || opt.type === 'boolean') {
         self.boolean(key);
     }
-    if (opt.string || opt.type === &#x27;string&#x27;) {
+    if (opt.string || opt.type === 'string') {
         self.<span class="apidocCodeKeywordSpan">string</span>(key);
     }
 
@@ -980,13 +973,13 @@ self.check = function (f) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 if (missing.length) {
-    fail(&#x27;Missing required arguments: &#x27; + missing.join(&#x27;, &#x27;));
+    fail('Missing required arguments: ' + missing.join(', '));
 }
 
 checks.forEach(function (f) {
     try {
         if (f(argv) === false) {
-            fail(&#x27;Argument check failed: &#x27; + f.<span class="apidocCodeKeywordSpan">toString</span>());
+            fail('Argument check failed: ' + f.<span class="apidocCodeKeywordSpan">toString</span>());
         }
     }
     catch (err) {
@@ -1008,11 +1001,11 @@ checks.forEach(function (f) {
     <li>description and source-code<pre class="apidocCodePre">usage = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     (6.82,3.35)
-    [ &#x27;moo&#x27; ]
+    [ 'moo' ]
 
     $ ./nonopt.js foo -x 0.54 bar -y 1.12 baz
     (0.54,1.12)
-    [ &#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27; ]
+    [ 'foo', 'bar', 'baz' ]
 
 Plus, Optimist comes with .<span class="apidocCodeKeywordSpan">usage</span>() and .demand()!
 -------------------------------------------------
@@ -1021,7 +1014,7 @@ divide.js:
 
 ````javascript
 #!/usr/bin/env node
-var argv = require(&#x27;optimist&#x27;)
+var argv = require('optimist')
 ...</pre></li>
     </ul>
 
@@ -1076,7 +1069,7 @@ Format usage output to wrap at `columns` many columns.
 };
 
 self.alias = function (x, y) {
-    if (typeof x === &#x27;object&#x27;) {
+    if (typeof x === 'object') {
         Object.keys(x).forEach(function (key) {
             self.<span class="apidocCodeKeywordSpan">alias</span>(key, x[key]);
         });
@@ -1107,14 +1100,14 @@ self.alias = function (x, y) {
     <li>example usage<pre class="apidocCodePre">...
 if (opt.alias) self.alias(key, opt.alias);
 if (opt.demand) self.demand(key);
-if (typeof opt.default !== &#x27;undefined&#x27;) {
+if (typeof opt.default !== 'undefined') {
     self.default(key, opt.default);
 }
 
-if (opt.boolean || opt.type === &#x27;boolean&#x27;) {
+if (opt.boolean || opt.type === 'boolean') {
     self.<span class="apidocCodeKeywordSpan">boolean</span>(key);
 }
-if (opt.string || opt.type === &#x27;string&#x27;) {
+if (opt.string || opt.type === 'string') {
     self.string(key);
 }
 
@@ -1177,7 +1170,7 @@ exit.
 };
 
 self.default = function (key, value) {
-    if (typeof key === &#x27;object&#x27;) {
+    if (typeof key === 'object') {
         Object.keys(key).forEach(function (k) {
             self.<span class="apidocCodeKeywordSpan">default</span>(k, key[k]);
         });
@@ -1207,7 +1200,7 @@ self.default = function (key, value) {
     <li>description and source-code<pre class="apidocCodePre">demand = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     self.demand = function (keys) {
-if (typeof keys == &#x27;number&#x27;) {
+if (typeof keys == 'number') {
     if (!demanded._) demanded._ = 0;
     demanded._ += keys;
 }
@@ -1245,7 +1238,7 @@ return self;
 
 var descriptions = {};
 self.describe = function (key, desc) {
-    if (typeof key === &#x27;object&#x27;) {
+    if (typeof key === 'object') {
         Object.keys(key).forEach(function (k) {
             self.<span class="apidocCodeKeywordSpan">describe</span>(k, key[k]);
         });
@@ -1326,7 +1319,7 @@ self.help = function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">options = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    if (!opts &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+    if (!opts &amp;&amp; typeof msg === 'object') {
         opts = msg;
         msg = null;
     }
@@ -1364,13 +1357,13 @@ function fail (msg) {
 You can pass in the `process.argv` yourself:
 
 ````javascript
-require(&#x27;optimist&#x27;)([ &#x27;-x&#x27;, &#x27;1&#x27;, &#x27;-y&#x27;, &#x27;2&#x27; ]).argv
+require('optimist')([ '-x', '1', '-y', '2' ]).argv
 ````
 
 or use .<span class="apidocCodeKeywordSpan">parse</span>() to do the same thing:
 
 ````javascript
-require(&#x27;optimist&#x27;).parse([ &#x27;-x&#x27;, &#x27;1&#x27;, &#x27;-y&#x27;, &#x27;2&#x27; ])
+require('optimist').parse([ '-x', '1', '-y', '2' ])
 ````
 
 The rest of these methods below come in just before the terminating `.argv`.
@@ -1392,16 +1385,16 @@ The rest of these methods below come in just before the terminating `.argv`.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function rebase(base, dir) {
-    var ds = path.normalize(dir).split(&#x27;/&#x27;).slice(1);
-    var bs = path.normalize(base).split(&#x27;/&#x27;).slice(1);
+    var ds = path.normalize(dir).split('/').slice(1);
+    var bs = path.normalize(base).split('/').slice(1);
 
-    for (var i = 0; ds[i] &#x26;&#x26; ds[i] == bs[i]; i++);
+    for (var i = 0; ds[i] &amp;&amp; ds[i] == bs[i]; i++);
     ds.splice(0, i); bs.splice(0, i);
 
     var p = path.normalize(
-        bs.map(function () { return &#x27;..&#x27; }).concat(ds).join(&#x27;/&#x27;)
-    ).replace(/\/$/,&#x27;&#x27;).replace(/^$/, &#x27;.&#x27;);
-    return p.match(/^[.\/]/) ? p : &#x27;./&#x27; + p;
+        bs.map(function () { return '..' }).concat(ds).join('/')
+    ).replace(/\/$/,'').replace(/^$/, '.');
+    return p.match(/^[.\/]/) ? p : './' + p;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1459,10 +1452,10 @@ self.check = function (f) {
         self.default(key, opt.default);
     }
 
-    if (opt.boolean || opt.type === &#x27;boolean&#x27;) {
+    if (opt.boolean || opt.type === 'boolean') {
         self.boolean(key);
     }
-    if (opt.string || opt.type === &#x27;string&#x27;) {
+    if (opt.string || opt.type === 'string') {
         self.<span class="apidocCodeKeywordSpan">string</span>(key);
     }
 
@@ -1491,13 +1484,13 @@ self.check = function (f) {
     <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 if (missing.length) {
-    fail(&#x27;Missing required arguments: &#x27; + missing.join(&#x27;, &#x27;));
+    fail('Missing required arguments: ' + missing.join(', '));
 }
 
 checks.forEach(function (f) {
     try {
         if (f(argv) === false) {
-            fail(&#x27;Argument check failed: &#x27; + f.<span class="apidocCodeKeywordSpan">toString</span>());
+            fail('Argument check failed: ' + f.<span class="apidocCodeKeywordSpan">toString</span>());
         }
     }
     catch (err) {
@@ -1524,11 +1517,11 @@ checks.forEach(function (f) {
     <li>description and source-code<pre class="apidocCodePre">usage = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     (6.82,3.35)
-    [ &#x27;moo&#x27; ]
+    [ 'moo' ]
 
     $ ./nonopt.js foo -x 0.54 bar -y 1.12 baz
     (0.54,1.12)
-    [ &#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27; ]
+    [ 'foo', 'bar', 'baz' ]
 
 Plus, Optimist comes with .<span class="apidocCodeKeywordSpan">usage</span>() and .demand()!
 -------------------------------------------------
@@ -1537,7 +1530,7 @@ divide.js:
 
 ````javascript
 #!/usr/bin/env node
-var argv = require(&#x27;optimist&#x27;)
+var argv = require('optimist')
 ...</pre></li>
     </ul>
 
@@ -1583,3 +1576,4 @@ Format usage output to wrap at `columns` many columns.
     ]
 </div>
 </div>
+</body></html>
