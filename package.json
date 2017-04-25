@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "optimist",
-    "description": "api documentation for [optimist (v0.6.1)](https://github.com/substack/node-optimist) [![npm package](https://img.shields.io/npm/v/npmdoc-optimist.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-optimist) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-optimist.svg)](https://travis-ci.org/npmdoc/node-npmdoc-optimist)",
+    "description": "#### basic api documentation for  [optimist (v0.6.1)](https://github.com/substack/node-optimist)  [![npm package](https://img.shields.io/npm/v/npmdoc-optimist.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-optimist) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-optimist.svg)](https://travis-ci.org/npmdoc/node-npmdoc-optimist)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "optimist": "*",

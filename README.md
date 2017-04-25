@@ -1,4 +1,7 @@
-# api documentation for  [optimist (v0.6.1)](https://github.com/substack/node-optimist)  [![npm package](https://img.shields.io/npm/v/npmdoc-optimist.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-optimist) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-optimist.svg)](https://travis-ci.org/npmdoc/node-npmdoc-optimist)
+# npmdoc-optimist
+
+#### basic api documentation for  [optimist (v0.6.1)](https://github.com/substack/node-optimist)  [![npm package](https://img.shields.io/npm/v/npmdoc-optimist.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-optimist) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-optimist.svg)](https://travis-ci.org/npmdoc/node-npmdoc-optimist)
+
 #### Light-weight option parsing with an argv hash. No optstrings attached.
 
 [![NPM](https://nodei.co/npm/optimist.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/optimist)
@@ -68,7 +71,8 @@
     "scripts": {
         "test": "tap ./test/*.js"
     },
-    "version": "0.6.1"
+    "version": "0.6.1",
+    "bin": {}
 }
 ```
 
